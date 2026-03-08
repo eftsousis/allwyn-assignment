@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bookstore API Test Suite" verbose="1" parallel="classes" thread-count="2">
+
+<!--    This will override system/env variable-->
+    <parameter name="base.url" value="https://fakerestapi.azurewebsites.net"/>
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Books API Tests">
+        <classes>
+            <class name="com.allwyn.tests.BooksApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Authors API Tests">
+        <classes>
+            <class name="com.allwyn.tests.AuthorsApiTest"/>
+        </classes>
+    </test>
+</suite>
